@@ -1,0 +1,743 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title data-key="pageTitle">مكتب عبد الله الأنصارى للمحاماة | Abdullah Al Ansari Law Firm</title>
+    
+    <!-- Load Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    
+    <!-- Load Google Fonts (Inter for English, Cairo for Arabic) -->
+    <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;600;700&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    
+    <!-- Simple icon library for placeholders -->
+    <script src="https://unpkg.com/feather-icons"></script>
+
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        sans: ['Inter', 'sans-serif'],
+                        arabic: ['Cairo', 'sans-serif'],
+                    },
+                    colors: {
+                        'brand-blue': '#1A375F', // Dark Blue
+                        'brand-blue-light': '#4A90E2', // Lighter Blue
+                        'brand-gold': '#C0A16B', // Gold/Amber
+                        'brand-gray-light': '#F5F5F5',
+                        'brand-gray-medium': '#E7E7E7',
+                        'brand-text': '#333333',
+                    }
+                }
+            }
+        }
+    </script>
+    
+    <!-- Custom Styles -->
+    <style>
+        /* Apply Cairo font when lang="ar" */
+        html[lang="ar"] body {
+            font-family: 'Cairo', 'sans-serif';
+        }
+        /* Apply Inter font when lang="en" */
+        html[lang="en"] body {
+            font-family: 'Inter', 'sans-serif';
+        }
+        
+        /* Active language button style */
+        .lang-btn.active {
+            font-weight: bold;
+            color: #C0A16B;
+            text-decoration: underline;
+        }
+
+        /* --- Animation Styles --- */
+
+        /* 1. Logo Load-in Animation */
+        @keyframes fadeInDown {
+            from {
+                opacity: 0;
+                transform: translateY(-20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+        #logo {
+            animation: fadeInDown 1s ease-out forwards;
+        }
+
+        /* 2. Scroll "Bounce In" Animation */
+        @keyframes bounceInUp {
+            0% {
+                opacity: 0;
+                transform: translateY(40px);
+            }
+            60% {
+                opacity: 1;
+                transform: translateY(-10px);
+            }
+            80% {
+                transform: translateY(5px);
+            }
+            100% {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        /* Class to hide elements before animation */
+        .scroll-animate {
+            opacity: 0;
+            transition: opacity 0.5s ease;
+        }
+
+        /* Class to apply animation when visible */
+        .scroll-animate.is-visible {
+            opacity: 1;
+            animation: bounceInUp 1s ease-out forwards;
+        }
+
+    </style>
+</head>
+
+<body class="bg-white text-brand-text">
+
+    <!-- 1. Header -->
+    <header class="bg-white shadow-sm sticky top-0 z-50">
+        <nav class="container mx-auto px-4 sm:px-6 lg:px-8 py-4 flex justify-between items-center">
+            <!-- Logo Area -->
+            <div class="flex-shrink-0">
+                <!-- 
+                  استبدل 'src' بمسار الشعار الخاص بك.
+                  يمكنك التحكم بحجم الشعار عبر تعديل 'height' و 'width' في 'style' أدناه.
+                -->
+                <a href="#" class="block" id="logo">
+                    <img src="images/logo.png" alt="Logo" style="height: 100px; width: 135px;">
+                </a>
+            </div>
+            
+            <!-- Navigation Links (Desktop) -->
+            <div class="hidden md:flex items-center space-x-6 rtl:space-x-reverse">
+                <a href="#about" class="text-brand-text hover:text-brand-gold" data-key="navAbout">من نحن</a>
+                <a href="#services" class="text-brand-text hover:text-brand-gold" data-key="navServices">خدماتنا</a>
+                <a href="#team" class="text-brand-text hover:text-brand-gold" data-key="navTeam">فريق العمل</a>
+                <a href="#blog" class="text-brand-text hover:text-brand-gold" data-key="navBlog">المدونة</a>
+                <a href="#contact" class="bg-brand-gold text-white px-4 py-2 rounded-md hover:bg-opacity-90" data-key="navContact">تواصل معنا</a>
+            </div>
+            
+            <!-- Language Switcher -->
+            <div class="flex items-center space-x-2 rtl:space-x-reverse">
+                <button id="lang-ar" class="lang-btn text-sm px-2 py-1 active">AR</button>
+                <span>|</span>
+                <button id="lang-en" class="lang-btn text-sm px-2 py-1">EN</button>
+            </div>
+            
+            <!-- Mobile Menu Button (placeholder) -->
+            <div class="md:hidden">
+                <button class="text-brand-blue">
+                    <i data-feather="menu" class="w-6 h-6"></i>
+                </button>
+            </div>
+        </nav>
+    </header>
+
+    <main>
+        <!-- 2. Hero Section -->
+        <section class="bg-brand-blue text-white pt-24 pb-16 relative">
+             <div class="absolute inset-0 bg-black opacity-30"></div>
+             <!-- يمكنك تغيير الصورة كخلفية من هنا -->
+             <div class="absolute inset-0 bg-cover bg-center" style="background-image: url('images/main.jpg');"></div>
+             
+             <div class="container mx-auto px-4 sm:px-6 lg:px-8 relative z-10 text-center">
+                <h1 class="text-4xl sm:text-5xl lg:text-6xl font-bold" data-key="heroTitle">مكتب عبد الله الأنصارى</h1>
+                <h2 class="text-2xl sm:text-3xl font-light" data-key="heroSubtitle">للمحاماة والاستشارات القانونية</h2>
+                <p class="mt-6 text-lg max-w-2xl mx-auto" data-key="heroDescription">
+                    خبرة قانونية رائدة لحماية أعمالك وحقوقك في سلطنة عمان والخليج.
+                </p>
+                <a href="#consultation" class="mt-8 inline-block bg-brand-gold text-white font-bold py-3 px-8 rounded-lg text-lg hover:bg-opacity-90" data-key="heroCta">
+                    اطلب استشارة قانونية
+                </a>
+            </div>
+        </section>
+
+        <!-- 3. Key Features Bar -->
+        <section class="bg-brand-gray-light py-12">
+            <div class="container mx-auto px-4 sm:px-6 lg:px-8">
+                <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8 text-center">
+                    <!-- Feature 1: Book Appointment -->
+                    <div class="flex flex-col items-center scroll-animate">
+                        <i data-feather="calendar" class="w-12 h-12 text-brand-gold mb-3"></i>
+                        <h3 class="text-lg font-semibold" data-key="featureBookingTitle">نظام حجز مواعيد</h3>
+                        <p class="text-sm text-gray-600" data-key="featureBookingDesc">احجز استشارتك مباشرة عبر الإنترنت.</p>
+                    </div>
+                    <!-- Feature 2: Live Chat -->
+                    <div class="flex flex-col items-center scroll-animate">
+                        <i data-feather="message-circle" class="w-12 h-12 text-brand-gold mb-3"></i>
+                        <h3 class="text-lg font-semibold" data-key="featureChatTitle">دردشة فورية</h3>
+                        <p class="text-sm text-gray-600" data-key="featureChatDesc">احصل على إجابات سريعة لاستفساراتك الأولية.</p>
+                    </div>
+                    <!-- Feature 3: Custom Consultation -->
+                    <div class="flex flex-col items-center scroll-animate">
+                        <i data-feather="file-text" class="w-12 h-12 text-brand-gold mb-3"></i>
+                        <h3 class="text-lg font-semibold" data-key="featureRequestTitle">استشارة مخصصة</h3>
+                        <p class="text-sm text-gray-600" data-key="featureRequestDesc">قدم طلباً تفصيلياً مع رفع المستندات.</p>
+                    </div>
+                    <!-- Feature 4: Client Portal -->
+                    <div class="flex flex-col items-center scroll-animate">
+                        <i data-feather="lock" class="w-12 h-12 text-brand-gold mb-3"></i>
+                        <h3 class="text-lg font-semibold" data-key="featurePortalTitle">منطقة العملاء</h3>
+                        <p class="text-sm text-gray-600" data-key="featurePortalDesc">تابع قضاياك وتبادل المستندات بأمان.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+
+        <!-- 4. About Us Section -->
+        <section id="about" class="bg-white py-16 sm:py-24">
+            <div class="container mx-auto px-4 sm:px-6 lg:px-8">
+                <div class="flex flex-col lg:flex-row items-center gap-12">
+                    <div class="lg:w-1/2">
+                        <!-- صورة احترافية للمكتب أو صورة تعبيرية -->
+                        <img src="images/logo.png" alt="About Us" class="rounded-lg shadow-lg w-full scroll-animate">
+                    </div>
+                    <div class="lg:w-1/2 scroll-animate">
+                        <h2 class="text-3xl font-bold text-brand-blue mb-6" data-key="aboutTitle">
+                            من نحن: رؤيتكم شريكنا في النجاح
+                        </h2>
+                        <p class="text-lg leading-relaxed text-brand-text mb-4" data-key="aboutP1">
+                            في مكتب عبد الله الأنصارى، نجمع بين الخبرة العميقة بالقوانين العمانية والفهم الدقيق للمعايير التجارية الدولية. رؤيتنا هي أن نكون الدرع القانوني الأمثل للشركات والأفراد، ونسعى لتقديم حلول قانونية مبتكرة وفعالة.
+                        </p>
+                        <p class="text-lg leading-relaxed text-brand-text" data-key="aboutP2">
+                            نحن نلتزم بأعلى معايير النزاهة والاحترافية، ونفخر ببناء علاقات ثقة طويلة الأمد مع عملائنا.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 5. Legal Services Section -->
+        <section id="services" class="bg-brand-gray-light py-16 sm:py-24">
+            <div class="container mx-auto px-4 sm:px-6 lg:px-8">
+                <h2 class="text-3xl font-bold text-center text-brand-blue mb-12 scroll-animate" data-key="servicesTitle">
+                    خدماتنا القانونية
+                </h2>
+                
+                <!-- Services for Businesses -->
+                <div class="mb-12">
+                    <h3 class="text-2xl font-semibold text-brand-blue mb-6 scroll-animate" data-key="servicesCorporateTitle">
+                        خدمات الشركات والمستثمرين
+                    </h3>
+                    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                        <!-- Service Card 1 -->
+                        <div class="bg-white p-6 rounded-lg shadow-md border-t-4 border-brand-gold scroll-animate">
+                            <i data-feather="briefcase" class="w-10 h-10 text-brand-gold mb-4"></i>
+                            <h4 class="text-xl font-bold mb-2" data-key="serviceB1Title">تأسيس الشركات والاستثمار الأجنبي</h4>
+                            <p class="text-brand-text" data-key="serviceB1Desc">نساعدك في تأسيس شركتك في عمان بكفاءة، ونقدم النصح حول جذب الاستثمارات وضمان الامتثال القانوني.</p>
+                        </div>
+                        <!-- Service Card 2 -->
+                        <div class="bg-white p-6 rounded-lg shadow-md border-t-4 border-brand-gold scroll-animate">
+                            <i data-feather="file-text" class="w-10 h-10 text-brand-gold mb-4"></i>
+                            <h4 class="text-xl font-bold mb-2" data-key="serviceB2Title">العقود التجارية</h4>
+                            <p class="text-brand-text" data-key="serviceB2Desc">صياغة ومراجعة العقود التجارية الدولية والمحلية لضمان حماية مصالحك.</p>
+                        </div>
+                        <!-- Service Card 3 -->
+                        <div class="bg-white p-6 rounded-lg shadow-md border-t-4 border-brand-gold scroll-animate">
+                            <i data-feather="shield" class="w-10 h-10 text-brand-gold mb-4"></i>
+                            <h4 class="text-xl font-bold mb-2" data-key="serviceB3Title">الامتثال ومكافحة الجرائم الإلكترونية</h4>
+                            <p class="text-brand-text" data-key="serviceB3Desc">تقديم استشارات لحماية بيانات شركتك والامتثال لقوانين الجرائم الإلكترونية المتطورة.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Services for Individuals -->
+                <div>
+                    <h3 class="text-2xl font-semibold text-brand-blue mb-6 scroll-animate" data-key="servicesIndividualTitle">
+                        خدمات الأفراد
+                    </h3>
+                    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                        <!-- Service Card 4 -->
+                        <div class="bg-white p-6 rounded-lg shadow-md border-t-4 border-brand-blue-light scroll-animate">
+                            <i data-feather="gavel" class="w-10 h-10 text-brand-blue-light mb-4"></i>
+                            <h4 class="text-xl font-bold mb-2" data-key="serviceI1Title">التقاضي والمنازعات</h4>
+                            <p class="text-brand-text" data-key="serviceI1Desc">تمثيل قانوني قوي في المنازعات المدنية والتجارية أمام جميع المحاكم.</p>
+                        </div>
+                        <!-- Service Card 5 -->
+                        <div class="bg-white p-6 rounded-lg shadow-md border-t-4 border-brand-blue-light scroll-animate">
+                            <i data-feather="home" class="w-10 h-10 text-brand-blue-light mb-4"></i>
+                            <h4 class="text-xl font-bold mb-2" data-key="serviceI2Title">القضايا العقارية</h4>
+                            <p class="text-brand-text" data-key="serviceI2Desc">استشارات وعمليات تسجيل ومنازعات متعلقة بالعقارات والأراضي.</p>
+                        </div>
+                        <!-- Service Card 6 -->
+                        <div class="bg-white p-6 rounded-lg shadow-md border-t-4 border-brand-blue-light scroll-animate">
+                            <i data-feather="users" class="w-10 h-10 text-brand-blue-light mb-4"></i>
+                            <h4 class="text-xl font-bold mb-2" data-key="serviceI3Title">قانون العمل</h4>
+                            <p class="text-brand-text" data-key="serviceI3Desc">استشارات حول عقود العمل، مكافأة نهاية الخدمة، والمنازعات العمالية.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        
+        <!-- 6. Our Team Section -->
+        <section id="team" class="bg-white py-16 sm:py-24">
+            <div class="container mx-auto px-4 sm:px-6 lg:px-8 text-center">
+                <h2 class="text-3xl font-bold text-brand-blue mb-12 scroll-animate" data-key="teamTitle">
+                    فريق العمل: خبرتكم بين أيدٍ أمينة
+                </h2>
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                    <!-- Team Member 1 -->
+                    <div class="bg-brand-gray-light p-6 rounded-lg scroll-animate">
+                        <img src="https://placehold.co/200x200/C0A16B/FFFFFF?text=AA" alt="Team Member" class="w-32 h-32 rounded-full mx-auto mb-4 border-4 border-white shadow-lg">
+                        <h4 class="text-xl font-bold text-brand-blue" data-key="team1Name">عبد الله الأنصارى</h4>
+                        <p class="text-brand-gold font-semibold mb-2" data-key="team1Title">المحامي المؤسس</p>
+                        <p class="text-sm text-brand-text" data-key="team1Bio">خبرة تمتد لأكثر من 20 عاماً في القانون التجاري والنزاعات الدولية.</p>
+                    </div>
+                    <!-- Team Member 2 -->
+                    <div class="bg-brand-gray-light p-6 rounded-lg scroll-animate">
+                        <img src="https://placehold.co/200x200/1A375F/FFFFFF?text=Partner" alt="Team Member" class="w-32 h-32 rounded-full mx-auto mb-4 border-4 border-white shadow-lg">
+                        <h4 class="text-xl font-bold text-brand-blue" data-key="team2Name">شريك (اسم)</h4>
+                        <p class="text-brand-gold font-semibold mb-2" data-key="team2Title">رئيس قسم الشركات</p>
+                        <p class="text-sm text-brand-text" data-key="team2Bio">متخصص في عمليات الدمج والاستحواذ وتأسيس الشركات الأجنبية.</p>
+                    </div>
+                    <!-- Team Member 3 -->
+                    <div class="bg-brand-gray-light p-6 rounded-lg scroll-animate">
+                        <img src="https://placehold.co/200x200/4A90E2/FFFFFF?text=Associate" alt="Team Member" class="w-32 h-32 rounded-full mx-auto mb-4 border-4 border-white shadow-lg">
+                        <h4 class="text-xl font-bold text-brand-blue" data-key="team3Name">محامي (اسم)</h4>
+                        <p class="text-brand-gold font-semibold mb-2" data-key="team3Title">متخصص في الجرائم الإلكترونية</p>
+                        <p class="text-sm text-brand-text" data-key="team3Bio">خبير في قضايا أمن البيانات والامتثال الرقمي وحماية الملكية الفكرية.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 7. Testimonials Section -->
+        <section id="testimonials" class="bg-brand-blue py-16 sm:py-24 text-white">
+            <div class="container mx-auto px-4 sm:px-6 lg:px-8 text-center">
+                 <h2 class="text-3xl font-bold text-center mb-12 scroll-animate" data-key="testimonialsTitle">
+                    شهادات عملاء نفخر بها
+                </h2>
+                <div class="max-w-3xl mx-auto scroll-animate">
+                    <i data-feather="message-circle" class="w-16 h-16 text-brand-gold opacity-50 mx-auto mb-4"></i>
+                    <p class="text-2xl italic leading-relaxed" data-key="testimonialQuote">
+                        "الاحترافية والدقة في التعامل هي السمة الأبرز لمكتب الأنصارى. لقد ساعدونا في هيكلة استثماراتنا في عمان بكفاءة لا مثيل لها."
+                    </p>
+                    <p class="mt-6 font-semibold text-lg" data-key="testimonialAuthor">
+                        الرئيس التنفيذي - شركة استثمار خليجية
+                    </p>
+                </div>
+            </div>
+        </section>
+
+        <!-- 8. Blog Section -->
+        <section id="blog" class="bg-white py-16 sm:py-24">
+            <div class="container mx-auto px-4 sm:px-6 lg:px-8">
+                <h2 class="text-3xl font-bold text-center text-brand-blue mb-12 scroll-animate" data-key="blogTitle">
+                    المدونة والمقالات القانونية
+                </h2>
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                    <!-- Blog Post 1 -->
+                    <div class="bg-white rounded-lg shadow-lg overflow-hidden border border-brand-gray-medium scroll-animate">
+                        <img src="https://placehold.co/600x400/1A375F/FFFFFF?text=Legal+Update" alt="Blog Post" class="w-full h-48 object-cover">
+                        <div class="p-6">
+                            <span class="text-sm text-brand-gold" data-key="blog1Tag">القانون التجاري</span>
+                            <h4 class="text-xl font-bold text-brand-blue my-2" data-key="blog1Title">آخر مستجدات قانون الاستثمار الأجنبي في عمان</h4>
+                            <p class="text-brand-text mb-4" data-key="blog1Desc">تحليل للآثار المترتبة على التعديلات الجديدة وكيفية استفادة الشركات منها...</p>
+                            <a href="#" class="font-semibold text-brand-blue-light hover:underline" data-key="blogReadMore">اقرأ المزيد</a>
+                        </div>
+                    </div>
+                    <!-- Blog Post 2 -->
+                    <div class="bg-white rounded-lg shadow-lg overflow-hidden border border-brand-gray-medium scroll-animate">
+                        <img src="https://placehold.co/600x400/4A90E2/FFFFFF?text=Cybercrime" alt="Blog Post" class="w-full h-48 object-cover">
+                        <div class="p-6">
+                            <span class="text-sm text-brand-gold" data-key="blog2Tag">الجرائم الإلكترونية</span>
+                            <h4 class="text-xl font-bold text-brand-blue my-2" data-key="blog2Title">3 خطوات لحماية شركتك من الاحتيال الرقمي</h4>
+                            <p class="text-brand-text mb-4" data-key="blog2Desc">إجراءات قانونية وتقنية يجب على كل شركة في الخليج اتخاذها اليوم...</p>
+                            <a href="#" class="font-semibold text-brand-blue-light hover:underline" data-key="blogReadMore">اقرأ المزيد</a>
+                        </div>
+                    </div>
+                    <!-- Blog Post 3 -->
+                    <div class="bg-white rounded-lg shadow-lg overflow-hidden border border-brand-gray-medium scroll-animate">
+                        <img src="https://placehold.co/600x400/C0A16B/FFFFFF?text=Contracts" alt="Blog Post" class="w-full h-48 object-cover">
+                        <div class="p-6">
+                            <span class="text-sm text-brand-gold" data-key="blog3Tag">العقود</span>
+                            <h4 class="text-xl font-bold text-brand-blue my-2" data-key="blog3Title">أهمية بند "القوة القاهرة" في العقود الحديثة</h4>
+                            <p class="text-brand-text mb-4" data-key="blog3Desc">كيف تحمي العقود مصالحك في ظل التغيرات العالمية غير المتوقعة...</p>
+                            <a href="#" class="font-semibold text-brand-blue-light hover:underline" data-key="blogReadMore">اقرأ المزيد</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 9. Custom Consultation Form -->
+        <section id="consultation" class="bg-brand-gray-light py-16 sm:py-24">
+            <div class="container mx-auto px-4 sm:px-6 lg:px-8">
+                <div class="max-w-3xl mx-auto">
+                    <h2 class="text-3xl font-bold text-center text-brand-blue mb-8 scroll-animate" data-key="formTitle">
+                        اطلب استشارة قانونية مخصصة
+                    </h2>
+                    <p class="text-center text-lg text-brand-text mb-8 scroll-animate" data-key="formDesc">
+                        يرجى ملء النموذج أدناه وسيقوم أحد خبرائنا بالتواصل معكم في أقرب وقت.
+                    </p>
+                    
+                    <form action="#" method="POST" class="space-y-6 bg-white p-8 rounded-lg shadow-xl scroll-animate">
+                        <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                            <div>
+                                <label for="name" class="block text-sm font-semibold text-brand-text" data-key="formName">الاسم الكامل *</label>
+                                <input type="text" id="name" name="name" required class="mt-1 block w-full px-4 py-3 border border-gray-300 rounded-md shadow-sm focus:ring-brand-gold focus:border-brand-gold">
+                            </div>
+                            <div>
+                                <label for="company" class="block text-sm font-semibold text-brand-text" data-key="formCompany">اسم الشركة (إن وجد)</label>
+                                <input type="text" id="company" name="company" class="mt-1 block w-full px-4 py-3 border border-gray-300 rounded-md shadow-sm focus:ring-brand-gold focus:border-brand-gold">
+                            </div>
+                        </div>
+                        
+                        <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                            <div>
+                                <label for="email" class="block text-sm font-semibold text-brand-text" data-key="formEmail">البريد الإلكتروني *</label>
+                                <input type="email" id="email" name="email" required class="mt-1 block w-full px-4 py-3 border border-gray-300 rounded-md shadow-sm focus:ring-brand-gold focus:border-brand-gold">
+                            </div>
+                            <div>
+                                <label for="phone" class="block text-sm font-semibold text-brand-text" data-key="formPhone">رقم الهاتف *</label>
+                                <input type="tel" id="phone" name="phone" required class="mt-1 block w-full px-4 py-3 border border-gray-300 rounded-md shadow-sm focus:ring-brand-gold focus:border-brand-gold">
+                            </div>
+                        </div>
+                        
+                        <div>
+                            <label for="service_type" class="block text-sm font-semibold text-brand-text" data-key="formService">نوع الخدمة المطلوبة</label>
+                            <select id="service_type" name="service_type" class="mt-1 block w-full px-4 py-3 border border-gray-300 rounded-md shadow-sm focus:ring-brand-gold focus:border-brand-gold bg-white">
+                                <option data-key="formServiceOpt1">تأسيس شركات</option>
+                                <option data-key="formServiceOpt2">استشارة تجارية</option>
+                                <option data-key="formServiceOpt3">عقود ومراجعات</option>
+                                <option data-key="formServiceOpt4">منازعات وتقاضي</option>
+                                <option data-key="formServiceOpt5">جرائم إلكترونية</option>
+                                <option data-key="formServiceOpt6">أخرى</option>
+                            </select>
+                        </div>
+                        
+                        <div>
+                            <label for="message" class="block text-sm font-semibold text-brand-text" data-key="formMessage">نبذة عن الاستشارة *</label>
+                            <textarea id="message" name="message" rows="5" required class="mt-1 block w-full px-4 py-3 border border-gray-300 rounded-md shadow-sm focus:ring-brand-gold focus:border-brand-gold"></textarea>
+                        </div>
+                        
+                        <div>
+                            <label for="documents" class="block text-sm font-semibold text-brand-text" data-key="formUpload">رفع مستندات (اختياري)</label>
+                            <input type="file" id="documents" name="documents" class="mt-1 block w-full text-sm text-gray-500 file:mr-4 file:py-2 file:px-4 file:rounded-md file:border-0 file:font-semibold file:bg-brand-gold file:text-white hover:file:bg-opacity-90">
+                        </div>
+                        
+                        <div class="text-center">
+                            <button type="submit" class="w-full md:w-auto inline-flex justify-center py-3 px-10 border border-transparent shadow-sm text-lg font-bold rounded-md text-white bg-brand-blue hover:bg-opacity-90 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-brand-blue" data-key="formSubmit">
+                                إرسال الطلب
+                            </button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+    <!-- 10. Footer -->
+    <footer id="contact" class="bg-brand-blue text-white">
+        <div class="container mx-auto px-4 sm:px-6 lg:px-8 py-12">
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8 mb-8">
+                <!-- About Firm -->
+                <div>
+                    <h4 class="text-xl font-bold mb-4" data-key="logoText">مكتب عبد الله الأنصارى</h4>
+                    <p class="text-gray-300" data-key="footerDesc">
+                        شريككم القانوني الموثوق للنجاح في بيئة الأعمال العمانية والخليجية.
+                    </p>
+                </div>
+                
+                <!-- Quick Links -->
+                <div>
+                    <h4 class="text-xl font-bold mb-4" data-key="footerLinksTitle">روابط سريعة</h4>
+                    <ul class="space-y-2">
+                        <li><a href="#about" class="text-gray-300 hover:text-brand-gold" data-key="navAbout">من نحن</a></li>
+                        <li><a href="#services" class="text-gray-300 hover:text-brand-gold" data-key="navServices">خدماتنا</a></li>
+                        <li><a href="#team" class="text-gray-300 hover:text-brand-gold" data-key="navTeam">فريق العمل</a></li>
+                        <li><a href="#blog" class="text-gray-300 hover:text-brand-gold" data-key="navBlog">المدونة</a></li>
+                    </ul>
+                </div>
+                
+                <!-- Contact Info -->
+                <div>
+                    <h4 class="text-xl font-bold mb-4" data-key="navContact">تواصل معنا</h4>
+                    <ul class="space-y-3 text-gray-300">
+                        <li class="flex items-center" data-key="footerAddress">
+                            <i data-feather="map-pin" class="w-5 h-5 ltr:mr-3 rtl:ml-3 text-brand-gold"></i>
+                            مسقط، سلطنة عمان (العنوان بالتفصيل)
+                        </li>
+                        <li class="flex items-center" data-key="footerPhone">
+                            <i data-feather="phone" class="w-5 h-5 ltr:mr-3 rtl:ml-3 text-brand-gold"></i>
+                            +968 1234 5678
+                        </li>
+                        <li class="flex items-center" data-key="footerEmail">
+                            <i data-feather="mail" class="w-5 h-5 ltr:mr-3 rtl:ml-3 text-brand-gold"></i>
+                            info@alansari-law.com
+                        </li>
+                    </ul>
+                </div>
+            </div>
+
+            <!-- Social Icons -->
+            <div class="flex justify-center space-x-6 rtl:space-x-reverse mb-8">
+                <a href="#" class="text-gray-300 hover:text-brand-gold">
+                    <i data-feather="linkedin" class="w-6 h-6"></i>
+                </a>
+                <a href="#" class="text-gray-300 hover:text-brand-gold">
+                    <i data-feather="twitter" class="w-6 h-6"></i>
+                </a>
+                <a href="#" class="text-gray-300 hover:text-brand-gold">
+                    <i data-feather="facebook" class="w-6 h-6"></i>
+                </a>
+            </div>
+
+            <!-- Bottom Bar -->
+            <div class="border-t border-gray-700 pt-6 text-center text-sm text-gray-400">
+                <p data-key="footerRights">
+                    &copy; 2025 مكتب عبد الله الأنصارى. جميع الحقوق محفوظة.
+                </p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Script to activate icons and handle language switching -->
+    <script>
+        // Activate Feather Icons
+        feather.replace();
+
+        // Language Content
+        const content = {
+            'ar': {
+                pageTitle: "مكتب عبد الله الأنصارى للمحاماة | Abdullah Al Ansari Law Firm",
+                logoText: "مكتب عبد الله الأنصارى",
+                navAbout: "من نحن",
+                navServices: "خدماتنا",
+                navTeam: "فريق العمل",
+                navBlog: "المدونة",
+                navContact: "تواصل معنا",
+                heroTitle: "مكتب عبد الله الأنصارى",
+                heroSubtitle: "للمحاماة والاستشارات القانونية",
+                heroDescription: "خبرة قانونية رائدة لحماية أعمالك وحقوقك في سلطنة عمان والخليج.",
+                heroCta: "اطلب استشارة قانونية",
+                featureBookingTitle: "نظام حجز مواعيد",
+                featureBookingDesc: "احجز استشارتك مباشرة عبر الإنترنت.",
+                featureChatTitle: "دردشة فورية",
+                featureChatDesc: "احصل على إجابات سريعة لاستفساراتك الأولية.",
+                featureRequestTitle: "استشارة مخصصة",
+                featureRequestDesc: "قدم طلباً تفصيلياً مع رفع المستندات.",
+                featurePortalTitle: "منطقة العملاء",
+                featurePortalDesc: "تابع قضاياك وتبادل المستندات بأمان.",
+                aboutTitle: "من نحن: رؤيتكم شريكنا في النجاح",
+                aboutP1: "في مكتب عبد الله الأنصارى، نجمع بين الخبرة العميقة بالقوانين العمانية والفهم الدقيق للمعايير التجارية الدولية. رؤيتنا هي أن نكون الدرع القانوني الأمثل للشركات والأفراد، ونسعى لتقديم حلول قانونية مبتكرة وفعالة.",
+                aboutP2: "نحن نلتزم بأعلى معايير النزاهة والاحترافية، ونفخر ببناء علاقات ثقة طويلة الأمد مع عملائنا.",
+                servicesTitle: "خدماتنا القانونية",
+                servicesCorporateTitle: "خدمات الشركات والمستثمرين",
+                serviceB1Title: "تأسيس الشركات والاستثمار الأجنبي",
+                serviceB1Desc: "نساعدك في تأسيس شركتك في عمان بكفاءة، ونقدم النصح حول جذب الاستثمارات وضمان الامتثال القانوني.",
+                serviceB2Title: "العقود التجارية",
+                serviceB2Desc: "صياغة ومراجعة العقود التجارية الدولية والمحلية لضمان حماية مصالحك.",
+                serviceB3Title: "الامتثال ومكافحة الجرائم الإلكترونية",
+                serviceB3Desc: "تقديم استشارات لحماية بيانات شركتك والامتثال لقوانين الجرائم الإلكترونية المتطورة.",
+                servicesIndividualTitle: "خدمات الأفراد",
+                serviceI1Title: "التقاضي والمنازعات",
+                serviceI1Desc: "تمثيل قانوني قوي في المنازعات المدنية والتجارية أمام جميع المحاكم.",
+                serviceI2Title: "القضايا العقارية",
+                serviceI2Desc: "استشارات وعمليات تسجيل ومنازعات متعلقة بالعقارات والأراضي.",
+                serviceI3Title: "قانون العمل",
+                serviceI3Desc: "استشارات حول عقود العمل، مكافأة نهاية الخدمة، والمنازعات العمالية.",
+                teamTitle: "فريق العمل: خبرتكم بين أيدٍ أمينة",
+                team1Name: "عبد الله الأنصارى",
+                team1Title: "المحامي المؤسس",
+                team1Bio: "خبرة تمتد لأكثر من 20 عاماً في القانون التجاري والنزاعات الدولية.",
+                team2Name: "شريك (اسم)",
+                team2Title: "رئيس قسم الشركات",
+                team2Bio: "متخصص في عمليات الدمج والاستحواذ وتأسيس الشركات الأجنبية.",
+                team3Name: "محامي (اسم)",
+                team3Title: "متخصص في الجرائم الإلكترونية",
+                team3Bio: "خبير في قضايا أمن البيانات والامتثال الرقمي وحماية الملكية الفكرية.",
+                testimonialsTitle: "شهادات عملاء نفخر بها",
+                testimonialQuote: '"الاحترافية والدقة في التعامل هي السمة الأبرز لمكتب الأنصارى. لقد ساعدونا في هيكلة استثماراتنا في عمان بكفاءة لا مثيل لها."',
+                testimonialAuthor: "الرئيس التنفيذي - شركة استثمار خليجية",
+                blogTitle: "المدونة والمقالات القانونية",
+                blog1Tag: "القانون التجاري",
+                blog1Title: "آخر مستجدات قانون الاستثمار الأجنبي في عمان",
+                blog1Desc: "تحليل للآثار المترتبة على التعديلات الجديدة وكيفية استفادة الشركات منها...",
+                blog2Tag: "الجرائم الإلكترونية",
+                blog2Title: "3 خطوات لحماية شركتك من الاحتيال الرقمي",
+                blog2Desc: "إجراءات قانونية وتقنية يجب على كل شركة في الخليج اتخاذها اليوم...",
+                blog3Tag: "العقود",
+                blog3Title: "أهمية بند \"القوة القاهرة\" في العقود الحديثة",
+                blog3Desc: "كيف تحمي العقود مصالحك في ظل التغيرات العالمية غير المتوقعة...",
+                blogReadMore: "اقرأ المزيد",
+                formTitle: "اطلب استشارة قانونية مخصصة",
+                formDesc: "يرجى ملء النموذج أدناه وسيقوم أحد خبرائنا بالتواصل معكم في أقرب وقت.",
+                formName: "الاسم الكامل *",
+                formCompany: "اسم الشركة (إن وجد)",
+                formEmail: "البريد الإلكتروني *",
+                formPhone: "رقم الهاتف *",
+                formService: "نوع الخدمة المطلوبة",
+                formServiceOpt1: "تأسيس شركات",
+                formServiceOpt2: "استشارة تجارية",
+                formServiceOpt3: "عقود ومراجعات",
+                formServiceOpt4: "منازعات وتقاضي",
+                formServiceOpt5: "جرائم إلكترونية",
+                formServiceOpt6: "أخرى",
+                formMessage: "نبذة عن الاستشارة *",
+                formUpload: "رفع مستندات (اختياري)",
+                formSubmit: "إرسال الطلب",
+                footerDesc: "شريككم القانوني الموثوق للنجاح في بيئة الأعمال العمانية والخليجية.",
+                footerLinksTitle: "روابط سريعة",
+                footerAddress: "مسقط، سلطنة عمان (العنوان بالتفصيل)",
+                footerPhone: "+968 1234 5678",
+                footerEmail: "info@alansari-law.com",
+                footerRights: "© 2025 مكتب عبد الله الأنصارى. جميع الحقوق محفوظة."
+            },
+            'en': {
+                pageTitle: "Abdullah Al Ansari Law Firm | مكتب عبد الله الأنصارى للمحاماة",
+                logoText: "Abdullah Al Ansari Law",
+                navAbout: "About Us",
+                navServices: "Our Services",
+                navTeam: "Our Team",
+                navBlog: "Blog",
+                navContact: "Contact Us",
+                heroTitle: "Abdullah Al Ansari",
+                heroSubtitle: "Law Firm & Legal Consultations",
+                heroDescription: "Leading legal expertise to protect your business and rights in Oman and the Gulf.",
+                heroCta: "Request a Legal Consultation",
+                featureBookingTitle: "Appointment Booking",
+                featureBookingDesc: "Book your consultation directly online.",
+                featureChatTitle: "Live Chat",
+                featureChatDesc: "Get quick answers to your initial inquiries.",
+                featureRequestTitle: "Custom Consultation",
+                featureRequestDesc: "Submit a detailed request with documents.",
+                featurePortalTitle: "Client Portal",
+                featurePortalDesc: "Track cases and exchange documents securely.",
+                aboutTitle: "About Us: Your Vision, Our Partnership in Success",
+                aboutP1: "At Abdullah Al Ansari Law Firm, we combine deep expertise in Omani law with a precise understanding of international commercial standards. Our vision is to be the premier legal shield for businesses and individuals, delivering innovative and effective legal solutions.",
+                aboutP2: "We are committed to the highest standards of integrity and professionalism, and we pride ourselves on building long-term, trusting relationships with our clients.",
+                servicesTitle: "Our Legal Services",
+                servicesCorporateTitle: "Corporate & Investor Services",
+                serviceB1Title: "Company Formation & Foreign Investment",
+                serviceB1Desc: "We assist in efficiently establishing your company in Oman, advising on attracting investments and ensuring legal compliance.",
+                serviceB2Title: "Commercial Contracts",
+                serviceB2Desc: "Drafting and reviewing international and local commercial contracts to ensure your interests are protected.",
+                serviceB3Title: "Compliance & Cybercrime",
+                serviceB3Desc: "Providing counsel to protect your company's data and comply with evolving cybercrime legislation.",
+                servicesIndividualTitle: "Services for Individuals",
+                serviceI1Title: "Litigation & Dispute Resolution",
+                serviceI1Desc: "Strong legal representation in civil and commercial disputes before all courts.",
+                serviceI2Title: "Real Estate Law",
+                serviceI2Desc: "Consultations, registrations, and disputes related to real estate and land.",
+                serviceI3Title: "Labor Law",
+                serviceI3Desc: "Advice on employment contracts, end-of-service benefits, and labor disputes.",
+                teamTitle: "Our Team: Your Expertise in Safe Hands",
+                team1Name: "Abdullah Al Ansari",
+                team1Title: "Founding Partner",
+                team1Bio: "Over 20 years of experience in commercial law and international disputes.",
+                team2Name: "Partner (Name)",
+                team2Title: "Head of Corporate",
+                team2Bio: "Specializes in M&A and foreign company incorporation.",
+                team3Name: "Associate (Name)",
+                team3Title: "Cybercrime Specialist",
+                team3Bio: "Expert in data security, digital compliance, and IP protection.",
+                testimonialsTitle: "Testimonials We Are Proud Of",
+                testimonialQuote: '"Professionalism and precision are the hallmarks of Al Ansari Law. They helped us structure our investments in Oman with unparalleled efficiency."',
+                testimonialAuthor: "CEO - Gulf Investment Firm",
+                blogTitle: "Blog & Legal Articles",
+                blog1Tag: "Commercial Law",
+                blog1Title: "Latest Updates on Oman's Foreign Investment Law",
+                blog1Desc: "An analysis of the implications of new amendments and how companies can benefit...",
+                blog2Tag: "Cybercrime",
+                blog2Title: "3 Steps to Protect Your Company from Digital Fraud",
+                blog2Desc: "Legal and technical measures every company in the Gulf should take today...",
+                blog3Tag: "Contracts",
+                blog3Title: "The Importance of 'Force Majeure' Clauses",
+                blog3Desc: "How contracts can protect your interests amidst unforeseen global changes...",
+                blogReadMore: "Read More",
+                formTitle: "Request a Custom Legal Consultation",
+                formDesc: "Please fill out the form below, and one of our experts will contact you shortly.",
+                formName: "Full Name *",
+                formCompany: "Company Name (if applicable)",
+                formEmail: "Email Address *",
+                formPhone: "Phone Number *",
+                formService: "Type of Service Required",
+                formServiceOpt1: "Company Formation",
+                formServiceOpt2: "Commercial Consultation",
+                formServiceOpt3: "Contracts & Reviews",
+                formServiceOpt4: "Litigation & Disputes",
+                formServiceOpt5: "Cybercrime",
+                formServiceOpt6: "Other",
+                formMessage: "Brief about the consultation *",
+                formUpload: "Upload Documents (Optional)",
+                formSubmit: "Send Request",
+                footerDesc: "Your trusted legal partner for success in the Omani and Gulf business environment.",
+                footerLinksTitle: "Quick Links",
+                footerAddress: "Muscat, Sultanate of Oman (Detailed Address)",
+                footerPhone: "+968 1234 5678",
+                footerEmail: "info@alansari-law.com",
+                footerRights: "© 2025 Abdullah Al Ansari Law Firm. All rights reserved."
+            }
+        };
+
+        // Language Switcher Logic & Animation Observer
+        document.addEventListener('DOMContentLoaded', () => {
+            const langArBtn = document.getElementById('lang-ar');
+            const langEnBtn = document.getElementById('lang-en');
+            
+            function setLanguage(lang) {
+                // Set HTML lang and dir attributes
+                document.documentElement.lang = lang;
+                document.documentElement.dir = (lang === 'ar') ? 'rtl' : 'ltr';
+                
+                // Update button styles
+                langArBtn.classList.toggle('active', lang === 'ar');
+                langEnBtn.classList.toggle('active', lang === 'en');
+                
+                // Get the content for the selected language
+                const translations = content[lang];
+                
+                // Update all elements with data-key attribute
+                document.querySelectorAll('[data-key]').forEach(element => {
+                    const key = element.getAttribute('data-key');
+                    if (translations[key]) {
+                        element.textContent = translations[key];
+                    }
+                });
+            }
+
+            // Set initial language (Arabic)
+            setLanguage('ar');
+
+            // Add click listeners
+            langArBtn.addEventListener('click', () => setLanguage('ar'));
+            langEnBtn.addEventListener('click', () => setLanguage('en'));
+
+
+            // --- Intersection Observer for Scroll Animations ---
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.classList.add('is-visible');
+                        observer.unobserve(entry.target); // Animate only once
+                    }
+                });
+            }, {
+                threshold: 0.1 // Trigger when 10% of the element is visible
+            });
+
+            // Observe all elements with the 'scroll-animate' class
+            document.querySelectorAll('.scroll-animate').forEach(element => {
+                observer.observe(element);
+            });
+        });
+
+    </script>
+</body>
+</html>

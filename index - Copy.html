@@ -1,0 +1,353 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Financial Institutions | Baker McKenzie</title>
+    <!-- Load Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Load Inter font -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <!-- Configure Tailwind to use Inter font -->
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        sans: ['Inter', 'sans-serif'],
+                    },
+                    colors: {
+                        'brand-red-darkest': '#8A0D16',
+                        'brand-red-darker': '#9C0B1B',
+                        'brand-red-dark': '#BF0F1A',
+                        'brand-red': '#C51826',
+                        'brand-red-gradient-from': '#9C0B1B',
+                        'brand-red-gradient-to': '#C51826',
+                        'brand-gray-light': '#F5F5F5',
+                        'brand-gray-medium': '#E7E7E7',
+                        'brand-gray-dark': '#DDD',
+                        'brand-text-dark': '#222',
+                        'brand-text-medium': '#333',
+                        'brand-blue-dark': '#0A2B57',
+                        'brand-blue-light': '#154B92',
+                    }
+                }
+            }
+        }
+    </script>
+    <!-- Simple icon library for placeholders -->
+    <script src="https://unpkg.com/feather-icons"></script>
+</head>
+<body class="font-sans bg-white text-brand-text-dark">
+
+    <!-- 1. Header -->
+    <header class="bg-white">
+        <div class="container mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between items-center py-4">
+                <!-- Logo Area -->
+                <div class="flex-shrink-0">
+                    <!-- Placeholder logo -->
+                    <span class="font-bold text-xl text-brand-text-medium">Baker McKenzie</span>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Navigation Bar -->
+        <nav class="w-full bg-brand-gray-light border-y border-brand-gray-dark">
+            <div class="container mx-auto px-4 sm:px-6 lg:px-8">
+                <div class="flex justify-between items-center h-10">
+                    <!-- Left-side text links -->
+                    <div class="flex space-x-6">
+                        <a href="#" class="text-sm text-brand-text-medium hover:text-brand-red">People</a>
+                        <a href="#" class="text-sm text-brand-text-medium hover:text-brand-red">Services</a>
+                        <a href="#" class="text-sm text-brand-text-medium hover:text-brand-red">Insights</a>
+                        <a href="#" class="text-sm text-brand-text-medium hover:text-brand-red">About</a>
+                    </div>
+                    <!-- Right-side icons -->
+                    <div class="flex items-center space-x-4">
+                        <a href="#" class="text-brand-text-medium hover:text-brand-red">
+                            <i data-feather="search" class="w-4 h-4"></i>
+                        </a>
+                        <a href="#" class="text-brand-text-medium hover:text-brand-red">
+                            <i data-feather="globe" class="w-4 h-4"></i>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+    <main>
+        <!-- 2. Hero Section -->
+        <section class="w-full bg-gradient-to-r from-brand-red-gradient-from to-brand-red-gradient-to">
+            <div class="container mx-auto px-4 sm:px-6 lg:px-8 py-20 sm:py-28 text-center">
+                <h1 class="text-4xl sm:text-5xl lg:text-6xl font-bold text-white">
+                    Financial Institutions
+                </h1>
+                <p class="mt-4 text-lg text-white max-w-2xl mx-auto">
+                    We provide integrated, pragmatic advice to help our clients navigate the complex financial landscape.
+                </p>
+            </div>
+        </section>
+
+        <!-- 3. Intro Text Block & Right-Side Highlight Box -->
+        <section class="w-full bg-white py-16 sm:py-24">
+            <div class="container mx-auto px-4 sm:px-6 lg:px-8">
+                <div class="flex flex-col lg:flex-row gap-12">
+                    <!-- Intro Text Block -->
+                    <div class="lg:w-2/3">
+                        <p class="text-lg leading-relaxed mb-6">
+                            The world's leading financial institutions face a complex and rapidly evolving regulatory, transactional and disputes landscape. We help clients navigate these challenges across all key financial centers and emerging markets.
+                        </p>
+                        <p class="text-lg leading-relaxed">
+                            Our global Financial Institutions Group is a single, integrated team with a deep understanding of the industry. We work seamlessly across practices, jurisdictions and continents to provide innovative, business-focused solutions.
+                        </p>
+                    </div>
+                    
+                    <!-- Right-Side Highlight Box -->
+                    <div class="lg:w-1/3 flex-shrink-0">
+                        <!-- Red geometric background pattern (using a simple gradient as placeholder) -->
+                        <div class="bg-gradient-to-br from-brand-red-dark to-brand-red-darker p-6">
+                            <!-- White content box with shadow -->
+                            <div class="bg-white p-6 shadow-lg">
+                                <h3 class="text-xl font-semibold text-brand-text-dark mb-4">Global Reach, Local Depth</h3>
+                                <p class="text-brand-text-medium mb-6">
+                                    Our team operates across 70+ offices worldwide, offering unparalleled local expertise backed by a global platform.
+                                </p>
+                                <a href="#" class="inline-block bg-brand-red text-white font-semibold py-3 px-5 hover:bg-brand-red-dark transition-colors">
+                                    Contact Our Team
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 4. Sector Experience Section -->
+        <section class="w-full bg-brand-gray-light py-16 sm:py-24">
+            <div class="container mx-auto px-4 sm:px-6 lg:px-8">
+                <h2 class="text-3xl font-bold text-center mb-12">Recent Sector Experience</h2>
+                <div class="grid grid-cols-1 lg:grid-cols-2 gap-8">
+                    <!-- Left Card (Solid Red) -->
+                    <div class="bg-brand-red-dark p-8 sm:p-10">
+                        <h3 class="text-2xl font-semibold text-white mb-4">Advising on Landmark FinTech Merger</h3>
+                        <p class="text-white opacity-90 mb-6">
+                            We advised a leading payments provider on its $22 billion merger, navigating complex regulatory approvals across multiple jurisdictions.
+                        </p>
+                        <a href="#" class="text-white font-semibold border-b-2 border-white pb-1 hover:opacity-80">
+                            Read Case Study &rarr;
+                        </a>
+                    </div>
+                    
+                    <!-- Right Side (Stacked White Cards) -->
+                    <div class="space-y-6">
+                        <!-- Card 1 -->
+                        <div class="bg-white p-6 border border-brand-gray-dark">
+                            <p class="text-sm text-brand-text-medium mb-2">Sustainable Finance</p>
+                            <h4 class="text-lg font-semibold text-brand-text-dark mb-2">Green Bond Issuance</h4>
+                            <p class="text-brand-text-medium">Advised on a <span class="text-brand-red font-semibold">€1.5 Billion</span> green bond framework for a major international bank.</p>
+                        </div>
+                        <!-- Card 2 -->
+                        <div class="bg-white p-6 border border-brand-gray-dark">
+                            <p class="text-sm text-brand-text-medium mb-2">Digital Assets</p>
+                            <h4 class="text-lg font-semibold text-brand-text-dark mb-2">Crypto Regulation Advisory</h4>
+                            <p class="text-brand-text-medium">Guided a digital asset exchange through the new regulatory landscape in Asia-Pacific.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 5. Sector Expertise Icons -->
+        <section class="w-full bg-white py-16 sm:py-24">
+            <div class="container mx-auto px-4 sm:px-6 lg:px-8">
+                <h2 class="text-3xl font-bold text-center mb-16">Core Sector Expertise</h2>
+                <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8">
+                    <!-- Icon Card 1 -->
+                    <div class="text-center">
+                        <div class="w-24 h-24 bg-red-100 rounded-full flex items-center justify-center mx-auto mb-6">
+                            <i data-feather="bank" class="w-12 h-12 text-brand-red"></i>
+                        </div>
+                        <div class="border border-brand-gray-dark p-6">
+                            <h3 class="text-xl font-semibold mb-2">Banking & Finance</h3>
+                            <p class="text-brand-text-medium mb-4">Advising on syndicated lending, acquisition finance, and regulatory capital.</p>
+                            <a href="#" class="font-semibold text-brand-red hover:text-brand-red-dark">Learn More</a>
+                        </div>
+                    </div>
+                    <!-- Icon Card 2 -->
+                    <div class="text-center">
+                        <div class="w-24 h-24 bg-blue-100 rounded-full flex items-center justify-center mx-auto mb-6">
+                            <i data-feather="shield" class="w-12 h-12 text-brand-blue-dark"></i>
+                        </div>
+                        <div class="border border-brand-gray-dark p-6">
+                            <h3 class="text-xl font-semibold mb-2">Insurance</h3>
+                            <p class="text-brand-text-medium mb-4">Guidance on M&A, reinsurance, insurtech, and complex regulatory matters.</p>
+                            <a href="#" class="font-semibold text-brand-red hover:text-brand-red-dark">Learn More</a>
+                        </div>
+                    </div>
+                    <!-- Icon Card 3 -->
+                    <div class="text-center">
+                        <div class="w-24 h-24 bg-green-100 rounded-full flex items-center justify-center mx-auto mb-6">
+                            <i data-feather="trending-up" class="w-12 h-12 text-green-700"></i>
+                        </div>
+                        <div class="border border-brand-gray-dark p-6">
+                            <h3 class="text-xl font-semibold mb-2">Investment Management</h3>
+                            <p class="text-brand-text-medium mb-4">Expertise in fund formation, asset management, and private equity.</p>
+                            <a href="#" class="font-semibold text-brand-red hover:text-brand-red-dark">Learn More</a>
+                        </div>
+                    </div>
+                    <!-- Icon Card 4 -->
+                    <div class="text-center">
+                        <div class="w-24 h-24 bg-purple-100 rounded-full flex items-center justify-center mx-auto mb-6">
+                            <i data-feather="cpu" class="w-12 h-12 text-purple-700"></i>
+                        </div>
+                        <div class="border border-brand-gray-dark p-6">
+                            <h3 class="text-xl font-semibold mb-2">FinTech</h3>
+                            <p class="text-brand-text-medium mb-4">Navigating payments, blockchain, digital assets, and AI in finance.</p>
+                            <a href="#" class="font-semibold text-brand-red hover:text-brand-red-dark">Learn More</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 6. Red Quote Banner -->
+        <section class="w-full bg-brand-red-dark py-16 sm:py-20">
+            <div class="container mx-auto px-4 sm:px-6 lg:px-8">
+                <div class="flex flex-col md:flex-row items-center gap-8">
+                    <!-- Quote Icon -->
+                    <div class="flex-shrink-0">
+                        <i data-feather="message-circle" class="w-16 h-16 text-white opacity-50"></i>
+                    </div>
+                    <!-- Quote Text -->
+                    <div class="flex-grow">
+                        <p class="text-2xl lg:text-3xl text-white italic leading-tight">
+                            "Their global footprint is incredible. We get seamless, high-quality advice in every market we operate."
+                        </p>
+                    </div>
+                    <!-- Award Note -->
+                    <div class="flex-shrink-0 text-left md:text-right">
+                        <p class="text-white font-semibold">Chambers Global 2024</p>
+                        <p class="text-white opacity-80 text-sm">Band 1, Global Banking & Finance</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 7. News & Insight Section -->
+        <section class="w-full bg-white py-16 sm:py-24">
+            <div class="container mx-auto px-4 sm:px-6 lg:px-8">
+                <h2 class="text-3xl font-bold text-center mb-12">News & Insights</h2>
+                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                    <!-- Card 1 (Dark Blue Gradient) -->
+                    <div class="flex flex-col">
+                        <div class="h-48 bg-gradient-to-br from-brand-blue-dark to-brand-blue-light flex items-center justify-center">
+                            <!-- Placeholder graphic -->
+                            <i data-feather="bar-chart-2" class="w-16 h-16 text-white opacity-75"></i>
+                        </div>
+                        <div class="border border-t-0 border-brand-gray-dark p-6 flex-grow">
+                            <p class="text-sm text-brand-red font-semibold mb-2">INSIGHT</p>
+                            <h3 class="text-xl font-semibold mb-4">The Future of AI in Compliance</h3>
+                            <p class="text-brand-text-medium mb-4">Exploring the regulatory and operational impact of generative AI.</p>
+                            <a href="#" class="font-semibold text-brand-red hover:text-brand-red-dark">Read More &rarr;</a>
+                        </div>
+                    </div>
+                    <!-- Card 2 (Silver/Gray) -->
+                    <div class="flex flex-col">
+                        <div class="h-48 bg-brand-gray-medium flex items-center justify-center">
+                            <!-- Placeholder graphic -->
+                            <i data-feather="globe" class="w-16 h-16 text-brand-text-medium opacity-75"></i>
+                        </div>
+                        <div class="border border-t-0 border-brand-gray-dark p-6 flex-grow">
+                            <p class="text-sm text-brand-red font-semibold mb-2">NEWS</p>
+                            <h3 class="text-xl font-semibold mb-4">Cross-Border Payments Report</h3>
+                            <p class="text-brand-text-medium mb-4">New report analyzes the shifting landscape for international transactions.</p>
+                            <a href="#" class="font-semibold text-brand-red hover:text-brand-red-dark">Read More &rarr;</a>
+                        </div>
+                    </div>
+                    <!-- Card 3 (Red Highlight) -->
+                    <div class="flex flex-col">
+                        <div class="h-48 bg-brand-red flex items-center justify-center">
+                            <!-- Placeholder graphic -->
+                            <i data-feather="calendar" class="w-16 h-16 text-white opacity-75"></i>
+                        </div>
+                        <div class="border border-t-0 border-brand-gray-dark p-6 flex-grow">
+                            <p class="text-sm text-brand-red font-semibold mb-2">EVENT</p>
+                            <h3 class="text-xl font-semibold mb-4">Global Financial Summit 2025</h3>
+                            <p class="text-brand-text-medium mb-4">Join our experts for a webinar on the key trends shaping the year ahead.</p>
+                            <a href="#" class="font-semibold text-brand-red hover:text-brand-red-dark">Register Now &rarr;</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 8. Related Services Section -->
+        <section class="w-full bg-brand-gray-light py-16 sm:py-24">
+            <div class="container mx-auto px-4 sm:px-6 lg:px-8">
+                <h2 class="text-3xl font-bold text-center mb-12">Related Services</h2>
+                <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8 text-brand-text-medium">
+                    <div>
+                        <ul class="space-y-3">
+                            <li><a href="#" class_name="hover:text-brand-red hover:underline">Regulatory & Compliance</a></li>
+                            <li><a href="#" class_name="hover:text-brand-red hover:underline">Financial Disputes</a></li>
+                            <li><a href="#" class_name="hover:text-brand-red hover:underline">Capital Markets</a></li>
+                        </ul>
+                    </div>
+                    <div>
+                        <ul class="space-y-3">
+                            <li><a href="#" class_name="hover:text-brand-red hover:underline">M&A in Financial Services</a></li>
+                            <li><a href="#" class_name="hover:text-brand-red hover:underline">Restructuring & Insolvency</a></li>
+                            <li><a href="#" class_name="hover:text-brand-red hover:underline">Private Equity</a></li>
+                        </ul>
+                    </div>
+                    <div>
+                        <ul class="space-y-3">
+                            <li><a href="#" class_name="hover:text-brand-red hover:underline">Tax</a></li>
+                            <li><a href="#" class_name="hover:text-brand-red hover:underline">Antitrust & Competition</a></li>
+                            <li><a href="#" class_name="hover:text-brand-red hover:underline">Technology & Data</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+    <!-- 9. Footer -->
+    <footer class="bg-brand-red-darkest text-white">
+        <div class="container mx-auto px-4 sm:px-6 lg:px-8 py-12">
+            <!-- Social Icons -->
+            <div class="flex justify-center space-x-6 mb-8">
+                <a href="#" class="text-white hover:opacity-75">
+                    <i data-feather="linkedin" class="w-6 h-6"></i>
+                </a>
+                <a href="#" class="text-white hover:opacity-75">
+                    <i data-feather="twitter" class="w-6 h-6"></i>
+                </a>
+                <a href="#" class="text-white hover:opacity-75">
+                    <i data-feather="facebook" class="w-6 h-6"></i>
+                </a>
+                <a href="#" class="text-white hover:opacity-75">
+                    <i data-feather="youtube" class="w-6 h-6"></i>
+                </a>
+            </div>
+            <!-- Bottom-most area -->
+            <div class="text-center text-sm text-gray-300">
+                <p class="mb-2">&copy; 2025 Baker McKenzie. All rights reserved. Attorney Advertising.</p>
+                <p>
+                    <a href="#" class="hover:underline">Privacy Policy</a> | 
+                    <a href="#" class="hover:underline">Terms of Use</a> | 
+                    <a href="#" class="hover:underline">Disclosures</a>
+                </p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Script to activate icons -->
+    <script>
+        feather.replace()
+    </script>
+</body>
+</html>
